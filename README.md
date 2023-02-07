@@ -10,7 +10,7 @@ Debe tener una cuenta en Github y clonar el repositorio en su computadora.
 # Instrucciones para levantar el proyecto React
 
 1. Abrir una terminal en la raíz del proyecto y ejecutar el comando yarn install para instalar todas las dependencias del proyecto.
-2. Una vez terminada la instalación de dependencias, ejecutar el comando npm start para levantar la aplicación.
+2. Una vez terminada la instalación de dependencias, ejecutar el comando yarn dev para levantar la aplicación.
 3. Abrir un navegador web y navegar a http://127.0.0.1:5173 para ver la aplicación en funcionamiento.
 
 # Instrucciones para levantar el servidor JSON
