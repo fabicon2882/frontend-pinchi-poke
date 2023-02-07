@@ -9,6 +9,7 @@ const Form = ({
   data = {},
   pokemons,
   setPokemons,
+  setSearchResults,
   handleCloseModal,
 }) => {
   const {
@@ -29,6 +30,7 @@ const Form = ({
       if (response.status === 201) {
         const updatedPokemons = [...pokemons, response.data];
         setPokemons(updatedPokemons);
+        setSearchResults(updatedPokemons);
         handleCloseModal();
       }
     } catch (err) {
@@ -52,6 +54,7 @@ const Form = ({
           });
 
           setPokemons(updatedPokemons);
+          setSearchResults(updatedPokemons);
           handleCloseModal();
         }
       } catch (err) {

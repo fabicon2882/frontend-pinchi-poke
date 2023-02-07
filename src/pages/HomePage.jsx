@@ -12,7 +12,7 @@ import {
 const HomePage = () => {
   const [pokemon, setPokemon] = useState({});
   const [pokemons, setPokemons] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState();
   const [showModal, setShowModal] = useState({ visible: false, action: '' });
 
   const [inputValue, setInputValue] = useState('');
@@ -92,6 +92,7 @@ const HomePage = () => {
         actionsButtons={actionsButtonsCreate}
         pokemons={pokemons}
         setPokemons={setPokemons}
+        setSearchResults={setSearchResults}
         handleCloseModal={() => handleCloseModal('create')}
       />
     </Modal>
@@ -105,6 +106,7 @@ const HomePage = () => {
         data={pokemon}
         pokemons={pokemons}
         setPokemons={setPokemons}
+        setSearchResults={setSearchResults}
         handleCloseModal={() => handleCloseModal('modify')}
       />
     </Modal>

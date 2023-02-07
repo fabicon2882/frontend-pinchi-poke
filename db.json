@@ -6,6 +6,20 @@
       "attack": "100",
       "fender": "14",
       "id": 2
+    },
+    {
+      "name": "pokemon tres",
+      "img": "http://picachu.com",
+      "attack": "13",
+      "fender": "97",
+      "id": 3
+    },
+    {
+      "name": "pokemon dos",
+      "img": "http://odokdkd.com",
+      "attack": "5",
+      "fender": "100",
+      "id": 4
     }
   ]
 }
