@@ -82,6 +82,13 @@ const Form = ({
               <Controller
                 control={control}
                 name="name"
+                rules={{
+                  required: 'Debe ingresar el nombre del pokemon',
+                  pattern: {
+                    value: /^[a-zA-Z ]{2,40}$/,
+                    message: 'El campo solo admite letras',
+                  },
+                }}
                 render={({ field: { onChange, value } }) => (
                   <InputText
                     label="Nombre:"
@@ -92,13 +99,21 @@ const Form = ({
                     className="mb-4"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
+                    errors={errors}
                   />
                 )}
-                rules={{ required: true }}
               />
               <Controller
                 control={control}
                 name="img"
+                rules={{
+                  required: 'Debe ingresar la url de la foto',
+                  pattern: {
+                    value:
+                      /^(https?:\/\/)?(www\.)?[a-zA-Z0-9]+\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/,
+                    message: 'El campo solo admite una URL',
+                  },
+                }}
                 render={({ field: { onChange, value } }) => (
                   <InputText
                     label="Imagen:"
@@ -109,9 +124,9 @@ const Form = ({
                     className="mb-4"
                     value={value}
                     onChange={(e) => onChange(e.target.value)}
+                    errors={errors}
                   />
                 )}
-                rules={{ required: true }}
               />
             </div>
             <div className="w-50">

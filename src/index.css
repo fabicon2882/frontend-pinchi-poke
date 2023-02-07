@@ -232,6 +232,30 @@ body {
   cursor: pointer;
 }
 
+.text-red {
+  color: red;
+}
+
+.text-xs {
+  font-size: 10px;
+}
+
+.block {
+  display: block;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.mt--10 {
+  margin-top: -10px;
+}
+
+.ml-100 {
+  margin-left: 120px;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

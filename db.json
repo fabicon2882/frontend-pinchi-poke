@@ -1,3 +1,18 @@
 {
-  "pokemons": []
+  "pokemons": [
+    {
+      "name": "pokemon",
+      "img": "http://globant.com",
+      "attack": "77",
+      "fender": "16",
+      "id": 1
+    },
+    {
+      "name": "popeye",
+      "img": "http://picachu.com",
+      "attack": 50,
+      "fender": 50,
+      "id": 2
+    }
+  ]
 }
