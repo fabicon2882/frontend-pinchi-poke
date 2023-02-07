@@ -117,7 +117,9 @@ const HomePage = () => {
     },
     {
       label: 'Imagen',
-      render: (pokemon) => pokemon.img,
+      render: (pokemon) => (
+        <img src={pokemon.img} width={50} height={50} alt="imagen de pokemon" />
+      ),
     },
     {
       label: 'Ataque',

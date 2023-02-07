@@ -2,14 +2,14 @@
   "pokemons": [
     {
       "name": "pokemon",
-      "img": "http://globant.com",
+      "img": "https://i.pinimg.com/564x/34/26/49/342649651ff0985eb72071d26d34a261.jpg",
       "attack": "77",
       "fender": "16",
       "id": 1
     },
     {
       "name": "popeye",
-      "img": "http://picachu.com",
+      "img": "https://i.pinimg.com/564x/34/26/49/342649651ff0985eb72071d26d34a261.jpg",
       "attack": 50,
       "fender": 50,
       "id": 2
