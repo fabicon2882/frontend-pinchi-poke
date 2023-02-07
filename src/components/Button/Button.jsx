@@ -4,7 +4,6 @@ import buttonStyle from './Button.module.css';
 import iconCross from '../../assets/cross.svg';
 import iconSave from '../../assets/save.svg';
 import iconAdd from '../../assets/add.svg';
-import iconSearch from '../../assets/search.svg';
 
 const icon = { iconCross, iconAdd, iconSave };
 

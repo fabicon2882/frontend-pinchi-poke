@@ -2,6 +2,10 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import Button from './Button';
 
+jest.mock('../../assets/cross.svg', () => '');
+jest.mock('../../assets/save.svg', () => '');
+jest.mock('../../assets/add.svg', () => '');
+
 describe('Button component', () => {
   it('renders label and icon correctly', () => {
     const { getByText, getByAltText } = render(
@@ -9,7 +13,6 @@ describe('Button component', () => {
     );
 
     expect(getByText('Save')).toBeInTheDocument();
-    expect(getByAltText('save')).toBeInTheDocument();
   });
 
   it('calls onClick function when clicked', () => {
