@@ -1,4 +1,4 @@
-## Guía de inicio para levantar un proyecto React y JSON Server
+## Guía de inicio para levantar un proyecto React
 
 Este proyecto incluye una aplicación React y un servidor JSON para proporcionar datos a la aplicación.
 
@@ -11,8 +11,8 @@ Debe tener una cuenta en Github y clonar el repositorio en su computadora.
 
 1. Abrir una terminal en la raíz del proyecto y ejecutar el comando yarn install para instalar todas las dependencias del proyecto.
 2. Crear un archivo .env en la ruta raiz del proyecto y crear dos variables
-   VITE_API_PUBLIC_URL=https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/pkm-msa-evaluation
-   VITE_API_ID_CLIENT=#Identificador\*único_del_cliente
+   VITE*API_PUBLIC_URL=https://tribu-ti-staffing-desarrollo-afangwbmcrhucqfh.z01.azurefd.net/pkm-msa-evaluation
+   VITE_API_ID_CLIENT=#Identificador*único_del_cliente
 3. Ejecutar el comando yarn dev para levantar la aplicación.
 4. Abrir un navegador web y navegar a http://127.0.0.1:5173 para ver la aplicación en funcionamiento.
 
