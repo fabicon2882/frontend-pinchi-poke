@@ -1,13 +1,13 @@
-## Guía de inicio para levantar un proyecto React
+# Guía de inicio para levantar un proyecto React
 
 Este proyecto incluye una aplicación React y un servidor JSON para proporcionar datos a la aplicación.
 
-# Prerequisitos
+## Prerequisitos
 
 Node.js debe estar instalado en su computadora.
 Debe tener una cuenta en Github y clonar el repositorio en su computadora.
 
-# Instrucciones para levantar el proyecto React
+## Instrucciones para levantar el proyecto React
 
 1. Abrir una terminal en la raíz del proyecto y ejecutar el comando yarn install para instalar todas las dependencias del proyecto.
 2. Crear un archivo .env en la ruta raiz del proyecto y crear dos variables
@@ -16,7 +16,7 @@ Debe tener una cuenta en Github y clonar el repositorio en su computadora.
 3. Ejecutar el comando yarn dev para levantar la aplicación.
 4. Abrir un navegador web y navegar a http://127.0.0.1:5173 para ver la aplicación en funcionamiento.
 
-# Instrucciones para correr los tests
+## Instrucciones para correr los tests
 
 1. Abrir una terminal
 2. Ejecutar el comando yarn test
