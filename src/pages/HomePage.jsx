@@ -9,6 +9,9 @@ import {
   getPokemons,
 } from '../services/pokemon.service';
 
+const MODIFY_MODAL_SHOW_VAR_DEFINE = 'modify';
+const CREATE_MODAL_SHOW_VAR_DEFINE = 'create';
+
 const HomePage = () => {
   const [pokemon, setPokemon] = useState({});
   const [pokemons, setPokemons] = useState([]);
@@ -35,10 +38,10 @@ const HomePage = () => {
     fetchPokemons();
   }, []);
 
-  const handleUpdate = async (id) => {
+  const handleGet = async (id) => {
     const data = await getPokemon(id);
     setPokemon(data);
-    handleShowModal('modify');
+    handleShowModal(MODIFY_MODAL_SHOW_VAR_DEFINE);
   };
 
   const handleDelete = async (id) => {
@@ -49,6 +52,16 @@ const HomePage = () => {
     });
 
     setPokemons(updatedPokemons);
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+
+    const filteredObjects = searchResults.filter((pokemon) =>
+      pokemon.name.toLowerCase().includes(event.target.value.toLowerCase())
+    );
+
+    setPokemons(filteredObjects);
   };
 
   const actionsButtonsCreate = (
@@ -63,7 +76,7 @@ const HomePage = () => {
         type="button"
         iconName="iconCross"
         label="Cancelar"
-        onClick={() => handleCloseModal('create')}
+        onClick={() => handleCloseModal(CREATE_MODAL_SHOW_VAR_DEFINE)}
       />
     </>
   );
@@ -80,7 +93,7 @@ const HomePage = () => {
         type="button"
         iconName="iconCross"
         label="Cancelar"
-        onClick={() => handleCloseModal('modify')}
+        onClick={() => handleCloseModal(MODIFY_MODAL_SHOW_VAR_DEFINE)}
       />
     </>
   );
@@ -93,7 +106,7 @@ const HomePage = () => {
         pokemons={pokemons}
         setPokemons={setPokemons}
         setSearchResults={setSearchResults}
-        handleCloseModal={() => handleCloseModal('create')}
+        handleCloseModal={() => handleCloseModal(CREATE_MODAL_SHOW_VAR_DEFINE)}
       />
     </Modal>
   );
@@ -107,7 +120,7 @@ const HomePage = () => {
         pokemons={pokemons}
         setPokemons={setPokemons}
         setSearchResults={setSearchResults}
-        handleCloseModal={() => handleCloseModal('modify')}
+        handleCloseModal={() => handleCloseModal(MODIFY_MODAL_SHOW_VAR_DEFINE)}
       />
     </Modal>
   );
@@ -120,7 +133,12 @@ const HomePage = () => {
     {
       label: 'Imagen',
       render: (pokemon) => (
-        <img src={pokemon.img} width={50} height={50} alt="imagen de pokemon" />
+        <img
+          src={pokemon.image}
+          width={50}
+          height={50}
+          alt="imagen de pokemon"
+        />
       ),
     },
     {
@@ -129,7 +147,7 @@ const HomePage = () => {
     },
     {
       label: 'Defensa',
-      render: (pokemon) => pokemon.fender,
+      render: (pokemon) => pokemon.defense,
     },
     {
       label: 'Acciones',
@@ -140,7 +158,7 @@ const HomePage = () => {
             src={iconEdit}
             height={24}
             width={24}
-            onClick={() => handleUpdate(pokemon.id)}
+            onClick={() => handleGet(pokemon.id)}
           />
           <img
             className="pointer"
@@ -158,21 +176,11 @@ const HomePage = () => {
     return pokemon.id;
   };
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-
-    const filteredObjects = searchResults.filter((pokemon) =>
-      pokemon.name.toLowerCase().includes(event.target.value.toLowerCase())
-    );
-
-    setPokemons(filteredObjects);
-  };
-
   return (
     <div className="container">
       <div className="row">
         <div className="col">
-          <h1>Listado de Pokemones</h1>
+          <h1>Listado de Pokemon</h1>
         </div>
       </div>
       <div className="row">
@@ -193,7 +201,7 @@ const HomePage = () => {
             type="button"
             iconName="iconAdd"
             label="Nuevo"
-            onClick={() => handleShowModal('create')}
+            onClick={() => handleShowModal(CREATE_MODAL_SHOW_VAR_DEFINE)}
           />
         </div>
       </div>
@@ -202,8 +210,12 @@ const HomePage = () => {
           <Table data={pokemons} config={config} keyFn={keyFn} />
         </div>
       </div>
-      {showModal.action === 'create' && showModal.visible && modalCreate}
-      {showModal.action === 'modify' && showModal.visible && modalUpdate}
+      {showModal.action === CREATE_MODAL_SHOW_VAR_DEFINE &&
+        showModal.visible &&
+        modalCreate}
+      {showModal.action === MODIFY_MODAL_SHOW_VAR_DEFINE &&
+        showModal.visible &&
+        modalUpdate}
     </div>
   );
 };

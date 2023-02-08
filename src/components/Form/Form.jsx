@@ -20,7 +20,7 @@ const Form = ({
   } = useForm(
     data.id
       ? { defaultValues: data }
-      : { defaultValues: { name: '', img: '', attack: 50, fender: 50 } }
+      : { defaultValues: { name: '', image: '', attack: 50, defense: 50 } }
   );
 
   const onSubmitCreate = handleSubmit(async (pokemon) => {
@@ -108,20 +108,19 @@ const Form = ({
               />
               <Controller
                 control={control}
-                name="img"
+                name="image"
                 rules={{
                   required: 'Debe ingresar la url de la foto',
                   pattern: {
-                    value:
-                      /^(https?:\/\/)?(www\.)?[a-zA-Z0-9]+\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/,
+                    value: /^(https?:\/\/)([\w.-]+)(.*)\.png$/,
                     message: 'El campo solo admite una URL',
                   },
                 }}
                 render={({ field: { onChange, value } }) => (
                   <InputText
                     label="Imagen:"
-                    id="img"
-                    name="img"
+                    id="image"
+                    name="image"
                     placeholder="url pokemon"
                     type="text"
                     className="mb-4"
@@ -149,7 +148,7 @@ const Form = ({
               />
               <Controller
                 control={control}
-                name="fender"
+                name="defense"
                 render={({ field: { onChange, value } }) => (
                   <RangeSlider
                     labeltext="Defensa:"
